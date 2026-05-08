@@ -143,4 +143,13 @@ class ExtendedMUSIC:
             w0 = max(0, w1 - W)
             pred[n], _ = self.locate_snapshot(Y[w0:w1])
         return pred
-    
+
+    def save(self, path):
+        import pickle
+        with open(path, 'wb') as f:
+            pickle.dump(self.p, f)
+
+    def load(self, path):
+        import pickle
+        with open(path, 'rb') as f:
+            self.p = pickle.load(f)

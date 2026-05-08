@@ -129,3 +129,13 @@ class ExtendedMatchedFilter:
         for n in range(len(Y)):
             pred[n], _ = self.locate_snapshot(Y[n])
         return pred
+    
+    def save(self, path):
+        import pickle
+        with open(path, 'wb') as f:
+            pickle.dump(self.p, f)
+
+    def load(self, path):
+        import pickle
+        with open(path, 'rb') as f:
+            self.p = pickle.load(f)

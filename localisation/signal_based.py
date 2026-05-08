@@ -182,3 +182,13 @@ class SignalBasedModel:
     def predict(self, Y):
         pred, _ = fc_forward(prepare_flat(Y), self.p)
         return denorm_pos(pred, self.bounds)
+    
+    def save(self, path):
+        import pickle
+        with open(path, 'wb') as f:
+            pickle.dump(self.p, f)
+
+    def load(self, path):
+        import pickle
+        with open(path, 'rb') as f:
+            self.p = pickle.load(f)

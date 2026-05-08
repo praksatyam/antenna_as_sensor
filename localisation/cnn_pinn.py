@@ -121,6 +121,18 @@ class CNNPINN:
     def predict(self, Y):
         out, _, _ = self._forward(prepare_spatial(Y))
         return denorm_pos(out, self.bounds)
+    
+    def save(self, path):
+        import pickle
+        with open(path, 'wb') as f:
+            pickle.dump({'cp': self.cp, 'fp': self.fp}, f)
+
+    def load(self, path):
+        import pickle
+        with open(path, 'rb') as f:
+            state = pickle.load(f)
+        self.cp = state['cp']
+        self.fp = state['fp']
 
 
 

@@ -1,0 +1,5 @@
+Method,Overall_RMSE_mm,Linear_mm,Sinusoidal_mm,Random_mm,Supervised
+Matched Filter,1.3902,0.6100,2.3954,0.4564,No (physics)
+MLP,1.7904,1.5747,0.9342,2.7628,Yes
+Curriculum PINN,2.3353,1.4417,3.2076,2.6628,Yes
+CNN-PINN,1.5153,0.2704,2.7821,0.3341,Yes

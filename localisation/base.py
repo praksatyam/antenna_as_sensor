@@ -141,6 +141,14 @@ class Adam:
             vh = self.v[key] / (1 - self.b2**self.t)
             params[key] -= self.lr * mh / (np.sqrt(vh) + self.eps)
 
+    def get_state(self):
+        return {'m': self.m, 'v': self.v, 't': self.t}
+
+    def set_state(self, state):
+        self.m = state['m']
+        self.v = state['v']
+        self.t = state['t']
+
 
 # ── Leaky ReLU ───────────────────────────────────────────────
 

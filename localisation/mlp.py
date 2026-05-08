@@ -46,6 +46,17 @@ class MLP:
     def predict(self, Y):
         pred, _ = self.forward(prepare_flat(Y))
         return denorm_pos(pred, self.bounds)
+    
+    def save(self, path):
+        import pickle
+        with open(path, 'wb') as f:
+            pickle.dump(self.p, f)
+
+    def load(self, path):
+        import pickle
+        with open(path, 'rb') as f:
+            self.p = pickle.load(f)
+
 
 class MLPLocalizer:
     """
