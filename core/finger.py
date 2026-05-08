@@ -3,19 +3,14 @@ import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 from scipy.ndimage import uniform_filter1d
 
-# Import shared infrastructure from existing simulation
-import sys
-sys.path.insert(0, '/home/claude')
-from ..config import (F0, SX, SY, EPSILON, Z_F0, SIGMA_N2,)
-
-from .array import (
-    build_array, build_coupling_matrix, simulate,
-    trajectory_linear, trajectory_sinusoidal, trajectory_random_walk,
-    screen_bounds
-)
-
-from .trajectory import (simulate, trajectory_linear, trajectory_sinusoidal,
-        trajectory_random_walk,screen_bounds)
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from config import F0, SX, SY, EPSILON, Z_F0, SIGMA_N2
+from core.array import build_array, build_coupling_matrix
+from core.trajectory import (simulate, trajectory_linear, screen_bounds)
+from core.trajectory import (simulate, trajectory_linear, 
+                               trajectory_sinusoidal,
+                               trajectory_random_walk, screen_bounds)
 
 f0 = F0
 c  = 3e8              # speed of light [m/s]

@@ -1,8 +1,11 @@
-from ..core.finger import *
-from ..core.array import *
-from ..core.trajectory import *
-from .base import *
-from ..baselines.base import *
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from config import F0, SX, SY, EPSILON, Z_F0, SIGMA_N2
+from core.finger import *
+from core.array import *
+from core.trajectory import *
+from localisation.base import *
+from baselines.base import *
 
 class CNNPINN:
     """

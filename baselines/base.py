@@ -1,6 +1,9 @@
-from ..core.finger import *
-from ..core.array import *
-from ..core.trajectory import *
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from config import F0, SX, SY, EPSILON, Z_F0, SIGMA_N2
+from core.finger import *
+from core.array import *
+from core.trajectory import *
 
 
 def extended_template(array_pos, candidate_pos, k, sigma_f_phys,

@@ -1,4 +1,6 @@
-from .array import *
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from core.array import *
 
 def screen_bounds(Sx, Sy, de):
     """Return (x_min, x_max, y_min, y_max) of the physical screen area."""

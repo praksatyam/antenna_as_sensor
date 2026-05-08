@@ -3,7 +3,10 @@ import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 from matplotlib.animation import FuncAnimation
 from scipy.ndimage import uniform_filter1d
-from ..config import (F0, SX, SY, EPSILON, Z_F0, SIGMA_N2)
+
+import sys, os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from config import F0, SX, SY, EPSILON, Z_F0, SIGMA_N2
 
 
 f0 = F0          # operating frequency [Hz] = 28 GHz
